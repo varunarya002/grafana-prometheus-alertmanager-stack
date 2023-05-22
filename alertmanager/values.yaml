@@ -21,7 +21,7 @@ alertmanager:
   ##
   alertmanagerSpec:
     routePrefix: /alertmanager/
-    externalUrl: https://clarityplatform.wadogo.inmobi.com/alertmanager/
+    externalUrl: https://hostname.xyz.com/alertmanager/
     ## Size is the expected size of the alertmanager cluster. The controller will eventually make the size of the
     ## running cluster equal to the expected size.
     replicas: 2
