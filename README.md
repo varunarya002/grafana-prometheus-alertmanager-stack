@@ -21,10 +21,10 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 
 ```console
 # Helm
-helm install --namespace monitoring sample -f alertmanager/values.yaml -f grafana/values.yaml -f prometheus/values.yaml  prometheus-community/kube-prometheus-stack 
+helm install --namespace monitoring demo -f alertmanager/values.yaml -f grafana/values.yaml -f prometheus/values.yaml  prometheus-community/kube-prometheus-stack 
 ```
 #Rules Alertmanager
-kubectl edit prometheusrules sample-kube-prometheus-st-alertmanager.rules -n monitoring
+kubectl edit prometheusrules demo-kube-prometheus-st-alertmanager.rules -n monitoring
 copy rules from prometheus/rules.yaml
 kubectl apply -f alertmanager-secret-k8s.yaml
 _See [configuration](#configuration) below._
@@ -47,7 +47,7 @@ _See [helm dependency](https://helm.sh/docs/helm/helm_dependency/) for command d
 
 ```console
 # Helm
-helm upgrade  --namespace monitoring sample -f alertmanager/values.yaml -f grafana/values.yaml -f prometheus/values.yaml  prometheus-community/kube-prometheus-stack
+helm upgrade  --namespace monitoring demo -f alertmanager/values.yaml -f grafana/values.yaml -f prometheus/values.yaml  prometheus-community/kube-prometheus-stack
 ```
 
 ## Configuring alertmanager
@@ -63,7 +63,7 @@ kubectl apply -f rna-kube-prometheus-stack/prometheus/rules.yaml
 
 ```console
 # Helm
-helm uninstall sample -n monitoring
+helm uninstall demo -n monitoring
 ```
 
 This removes all the Kubernetes components associated with the chart and deletes the release.
